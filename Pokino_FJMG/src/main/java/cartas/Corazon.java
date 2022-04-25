@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Corazon extends CartaPoker {
-    
+
     protected String id;
 
     public Corazon(int numero) {
@@ -29,32 +29,40 @@ public class Corazon extends CartaPoker {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Corazones");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("J de Corazones");
-                break;
+                case 1:
+                    System.out.println("As de Corazones");
+                    break;
 
-            case 12:
-                System.out.println("Q de Corazones");
-                break;
+                case 11:
+                    System.out.println("J de Corazones");
+                    break;
 
-            case 13:
-                System.out.println("K de Corazones");
-                break;
+                case 12:
+                    System.out.println("Q de Corazones");
+                    break;
 
-            default:
-                System.out.println(numero + " de Corazones");
-                break;
+                case 13:
+                    System.out.println("K de Corazones");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Corazones");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }
@@ -70,5 +78,5 @@ public class Corazon extends CartaPoker {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
 }

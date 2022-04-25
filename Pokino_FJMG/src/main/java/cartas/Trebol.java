@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Trebol extends CartaPoker {
-    
+
     protected String id;
 
     public Trebol(int numero) {
@@ -29,32 +29,40 @@ public class Trebol extends CartaPoker {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Tréboles");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("J de Tréboles");
-                break;
+                case 1:
+                    System.out.println("As de Tréboles");
+                    break;
 
-            case 12:
-                System.out.println("Q de Tréboles");
-                break;
+                case 11:
+                    System.out.println("J de Tréboles");
+                    break;
 
-            case 13:
-                System.out.println("K de Tréboles");
-                break;
+                case 12:
+                    System.out.println("Q de Tréboles");
+                    break;
 
-            default:
-                System.out.println(numero + " de Tréboles");
-                break;
+                case 13:
+                    System.out.println("K de Tréboles");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Tréboles");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }
@@ -70,5 +78,5 @@ public class Trebol extends CartaPoker {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
 }

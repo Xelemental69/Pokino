@@ -28,28 +28,36 @@ public class Oro extends CartaEsp {
     }
 
     public void mostrarCarta() {
+        
+        if(!tachado){
 
-        switch (numero) {
+            switch (numero) {
 
-            case 1:
-                System.out.println("As de Oros");
-                break;
-                
-            case 10:
-                System.out.println("Sota de Oros");
-                break;
+                case 1:
+                    System.out.println("As de Oros");
+                    break;
 
-            case 11:
-                System.out.println("Caballo de Oros");
-                break;
+                case 10:
+                    System.out.println("Sota de Oros");
+                    break;
 
-            case 12:
-                System.out.println("Rey de Oros");
-                break;
-            
-            default:
-                System.out.println(numero + " de Oros");
-                break;
+                case 11:
+                    System.out.println("Caballo de Oros");
+                    break;
+
+                case 12:
+                    System.out.println("Rey de Oros");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Oros");
+                    break;
+
+            }
+        
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 

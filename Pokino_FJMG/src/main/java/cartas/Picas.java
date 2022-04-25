@@ -29,32 +29,40 @@ public class Picas extends CartaPoker {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Picas");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("J de Picas");
-                break;
+                case 1:
+                    System.out.println("As de Picas");
+                    break;
 
-            case 12:
-                System.out.println("Q de Picas");
-                break;
+                case 11:
+                    System.out.println("J de Picas");
+                    break;
 
-            case 13:
-                System.out.println("K de Picas");
-                break;
+                case 12:
+                    System.out.println("Q de Picas");
+                    break;
 
-            default:
-                System.out.println(numero + " de Picas");
-                break;
+                case 13:
+                    System.out.println("K de Picas");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Picas");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }

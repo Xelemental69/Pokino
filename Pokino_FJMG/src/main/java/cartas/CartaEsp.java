@@ -13,10 +13,12 @@ import java.util.*;
 public abstract class CartaEsp {
     
     protected int numero;
+    protected boolean tachado;
 
     public CartaEsp(int numero) {
         
         this.numero = numero;
+        tachado = false;
         
     }
     
@@ -24,9 +26,18 @@ public abstract class CartaEsp {
         Random sacar = new Random();        
         
         numero = sacar.nextInt(12) + 1;
+        tachado = false;
         
     }
     
     public abstract void mostrarCarta();
+
+    public boolean isTachado() {
+        return tachado;
+    }
+
+    public void setTachado(boolean tachado) {
+        this.tachado = tachado;
+    }
     
 }

@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Diamante extends CartaPoker {
-    
+
     protected String id;
 
     public Diamante(int numero) {
@@ -29,32 +29,40 @@ public class Diamante extends CartaPoker {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Diamantes");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("J de Diamantes");
-                break;
+                case 1:
+                    System.out.println("As de Diamantes");
+                    break;
 
-            case 12:
-                System.out.println("Q de Diamantes");
-                break;
+                case 11:
+                    System.out.println("J de Diamantes");
+                    break;
 
-            case 13:
-                System.out.println("K de Diamantes");
-                break;
+                case 12:
+                    System.out.println("Q de Diamantes");
+                    break;
 
-            default:
-                System.out.println(numero + " de Diamantes");
-                break;
+                case 13:
+                    System.out.println("K de Diamantes");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Diamantes");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }
@@ -70,5 +78,5 @@ public class Diamante extends CartaPoker {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
 }

@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Basto extends CartaEsp {
-    
+
     protected String id;
 
     public Basto(int numero) {
@@ -29,27 +29,35 @@ public class Basto extends CartaEsp {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Bastos");
-                break;
-                
-            case 10:
-                System.out.println("Sota de Bastos");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("Caballo de Bastos");
-                break;
+                case 1:
+                    System.out.println("As de Bastos");
+                    break;
 
-            case 12:
-                System.out.println("Rey de Bastos");
-                break;
-            
-            default:
-                System.out.println(numero + " de Bastos");
-                break;
+                case 10:
+                    System.out.println("Sota de Bastos");
+                    break;
+
+                case 11:
+                    System.out.println("Caballo de Bastos");
+                    break;
+
+                case 12:
+                    System.out.println("Rey de Bastos");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Bastos");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
@@ -70,7 +78,5 @@ public class Basto extends CartaEsp {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
-    
-    
+
 }

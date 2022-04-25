@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Copa extends CartaEsp {
-    
+
     protected String id;
 
     public Copa(int numero) {
@@ -29,32 +29,40 @@ public class Copa extends CartaEsp {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Copas");
-                break;
-                
-            case 10:
-                System.out.println("Sota de Copas");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("Caballo de Copas");
-                break;
+                case 1:
+                    System.out.println("As de Copas");
+                    break;
 
-            case 12:
-                System.out.println("Rey de Copas");
-                break;
-            
-            default:
-                System.out.println(numero + " de Copas");
-                break;
+                case 10:
+                    System.out.println("Sota de Copas");
+                    break;
+
+                case 11:
+                    System.out.println("Caballo de Copas");
+                    break;
+
+                case 12:
+                    System.out.println("Rey de Copas");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Copas");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }
@@ -70,5 +78,5 @@ public class Copa extends CartaEsp {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
 }

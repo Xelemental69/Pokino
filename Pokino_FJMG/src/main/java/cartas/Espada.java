@@ -10,7 +10,7 @@ package cartas;
  * @author pikac
  */
 public class Espada extends CartaEsp {
-    
+
     protected String id;
 
     public Espada(int numero) {
@@ -29,32 +29,40 @@ public class Espada extends CartaEsp {
 
     public void mostrarCarta() {
 
-        switch (numero) {
+        if (tachado) {
 
-            case 1:
-                System.out.println("As de Espadas");
-                break;
-                
-            case 10:
-                System.out.println("Sota de Espadas");
-                break;
+            switch (numero) {
 
-            case 11:
-                System.out.println("Caballo de Espadas");
-                break;
+                case 1:
+                    System.out.println("As de Espadas");
+                    break;
 
-            case 12:
-                System.out.println("Rey de Espadas");
-                break;
-            
-            default:
-                System.out.println(numero + " de Espadas");
-                break;
+                case 10:
+                    System.out.println("Sota de Espadas");
+                    break;
+
+                case 11:
+                    System.out.println("Caballo de Espadas");
+                    break;
+
+                case 12:
+                    System.out.println("Rey de Espadas");
+                    break;
+
+                default:
+                    System.out.println(numero + " de Espadas");
+                    break;
+
+            }
+
+        } else {
+
+            System.out.println("XXXXXXXXXX");
 
         }
 
     }
-    
+
     public String getId() {
         return id;
     }
@@ -70,5 +78,5 @@ public class Espada extends CartaEsp {
     public void setNumero(int numero) {
         this.numero = numero;
     }
-    
+
 }
