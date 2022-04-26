@@ -11,22 +11,23 @@ package cartas;
  */
 public class Oro extends CartaEsp {
     
-    protected String id;
+    
 
     public Oro(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "O" + numero;
 
     }
 
     public Oro() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "O" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
         
         if(!tachado){
@@ -34,30 +35,30 @@ public class Oro extends CartaEsp {
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Oros");
+                    System.out.printf("As de Oros");
                     break;
 
                 case 10:
-                    System.out.println("Sota de Oros");
+                    System.out.printf("Sota de Oros");
                     break;
 
                 case 11:
-                    System.out.println("Caballo de Oros");
+                    System.out.printf("Caballo de Oros");
                     break;
 
                 case 12:
-                    System.out.println("Rey de Oros");
+                    System.out.printf("Rey de Oros");
                     break;
 
                 default:
-                    System.out.println(numero + " de Oros");
+                    System.out.printf(numero + " de Oros");
                     break;
 
             }
         
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

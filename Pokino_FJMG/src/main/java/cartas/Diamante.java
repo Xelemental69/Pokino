@@ -11,53 +11,54 @@ package cartas;
  */
 public class Diamante extends CartaPoker {
 
-    protected String id;
+    
 
     public Diamante(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "D" + numero;
 
     }
 
     public Diamante() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "D" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Diamantes");
+                    System.out.printf("As de Diamantes");
                     break;
 
                 case 11:
-                    System.out.println("J de Diamantes");
+                    System.out.printf("J de Diamantes");
                     break;
 
                 case 12:
-                    System.out.println("Q de Diamantes");
+                    System.out.printf("Q de Diamantes");
                     break;
 
                 case 13:
-                    System.out.println("K de Diamantes");
+                    System.out.printf("K de Diamantes");
                     break;
 
                 default:
-                    System.out.println(numero + " de Diamantes");
+                    System.out.printf(numero + " de Diamantes");
                     break;
 
             }
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

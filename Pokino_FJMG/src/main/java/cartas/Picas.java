@@ -11,7 +11,7 @@ package cartas;
  */
 public class Picas extends CartaPoker {
 
-    protected String id;
+    
 
     public Picas(int numero) {
 
@@ -27,30 +27,31 @@ public class Picas extends CartaPoker {
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Picas");
+                    System.out.printf("As de Picas");
                     break;
 
                 case 11:
-                    System.out.println("J de Picas");
+                    System.out.printf("J de Picas");
                     break;
 
                 case 12:
-                    System.out.println("Q de Picas");
+                    System.out.printf("Q de Picas");
                     break;
 
                 case 13:
-                    System.out.println("K de Picas");
+                    System.out.printf("K de Picas");
                     break;
 
                 default:
-                    System.out.println(numero + " de Picas");
+                    System.out.printf(numero + " de Picas");
                     break;
 
             }

@@ -11,53 +11,54 @@ package cartas;
  */
 public class Trebol extends CartaPoker {
 
-    protected String id;
+    
 
     public Trebol(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "T" + numero;
 
     }
 
     public Trebol() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "T" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Tréboles");
+                    System.out.printf("As de Tréboles");
                     break;
 
                 case 11:
-                    System.out.println("J de Tréboles");
+                    System.out.printf("J de Tréboles");
                     break;
 
                 case 12:
-                    System.out.println("Q de Tréboles");
+                    System.out.printf("Q de Tréboles");
                     break;
 
                 case 13:
-                    System.out.println("K de Tréboles");
+                    System.out.printf("K de Tréboles");
                     break;
 
                 default:
-                    System.out.println(numero + " de Tréboles");
+                    System.out.printf( numero + " de Tréboles");
                     break;
 
             }
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

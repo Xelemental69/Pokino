@@ -14,11 +14,13 @@ public abstract class CartaPoker {
     
     protected int numero;
     protected boolean tachado;
+    protected String id;
 
     public CartaPoker(int numero) {
         
         this.numero = numero;
         tachado = false;
+        id = "";
         
     }
     
@@ -27,6 +29,7 @@ public abstract class CartaPoker {
         
         numero = sacar.nextInt(13) + 1;
         tachado = false;
+        id = "";
         
     }
     
@@ -38,6 +41,19 @@ public abstract class CartaPoker {
 
     public void setTachado(boolean tachado) {
         this.tachado = tachado;
+    }
+    
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "CartaPoker{" + "numero=" + numero + ", tachado=" + tachado + ", id=" + id + '}';
     }
     
 }

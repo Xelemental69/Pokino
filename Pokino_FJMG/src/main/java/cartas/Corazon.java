@@ -11,53 +11,54 @@ package cartas;
  */
 public class Corazon extends CartaPoker {
 
-    protected String id;
+    
 
     public Corazon(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "C" + numero;
 
     }
 
     public Corazon() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "C" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Corazones");
+                    System.out.printf("As de Corazones");
                     break;
 
                 case 11:
-                    System.out.println("J de Corazones");
+                    System.out.printf("J de Corazones");
                     break;
 
                 case 12:
-                    System.out.println("Q de Corazones");
+                    System.out.printf("Q de Corazones");
                     break;
 
                 case 13:
-                    System.out.println("K de Corazones");
+                    System.out.printf("K de Corazones");
                     break;
 
                 default:
-                    System.out.println(numero + " de Corazones");
+                    System.out.printf(numero + " de Corazones");
                     break;
 
             }
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

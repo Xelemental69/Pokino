@@ -11,46 +11,47 @@ package cartas;
  */
 public class Espada extends CartaEsp {
 
-    protected String id;
+    
 
     public Espada(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "E" + numero;
 
     }
 
     public Espada() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "E" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Espadas");
+                    System.out.printf("As de Espadas");
                     break;
 
                 case 10:
-                    System.out.println("Sota de Espadas");
+                    System.out.printf("Sota de Espadas");
                     break;
 
                 case 11:
-                    System.out.println("Caballo de Espadas");
+                    System.out.printf("Caballo de Espadas");
                     break;
 
                 case 12:
-                    System.out.println("Rey de Espadas");
+                    System.out.printf("Rey de Espadas");
                     break;
 
                 default:
-                    System.out.println(numero + " de Espadas");
+                    System.out.printf(numero + " de Espadas");
                     break;
 
             }

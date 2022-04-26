@@ -11,53 +11,54 @@ package cartas;
  */
 public class Basto extends CartaEsp {
 
-    protected String id;
+    
 
     public Basto(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "B" + numero;
 
     }
 
     public Basto() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "B" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Bastos");
+                    System.out.printf("As de Bastos");
                     break;
 
                 case 10:
-                    System.out.println("Sota de Bastos");
+                    System.out.printf("Sota de Bastos");
                     break;
 
                 case 11:
-                    System.out.println("Caballo de Bastos");
+                    System.out.printf("Caballo de Bastos");
                     break;
 
                 case 12:
-                    System.out.println("Rey de Bastos");
+                    System.out.printf("Rey de Bastos");
                     break;
 
                 default:
-                    System.out.println(numero + " de Bastos");
+                    System.out.printf(numero + " de Bastos");
                     break;
 
             }
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

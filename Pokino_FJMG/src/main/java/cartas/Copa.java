@@ -11,53 +11,54 @@ package cartas;
  */
 public class Copa extends CartaEsp {
 
-    protected String id;
+    
 
     public Copa(int numero) {
 
         super(numero);
-        this.id = "P" + numero;
+        this.id = "C" + numero;
 
     }
 
     public Copa() {
 
         super();
-        this.id = "P" + numero;
+        this.id = "C" + numero;
 
     }
 
+    @Override
     public void mostrarCarta() {
 
-        if (tachado) {
+        if (!tachado) {
 
             switch (numero) {
 
                 case 1:
-                    System.out.println("As de Copas");
+                    System.out.printf("As de Copas");
                     break;
 
                 case 10:
-                    System.out.println("Sota de Copas");
+                    System.out.printf("Sota de Copas");
                     break;
 
                 case 11:
-                    System.out.println("Caballo de Copas");
+                    System.out.printf("Caballo de Copas");
                     break;
 
                 case 12:
-                    System.out.println("Rey de Copas");
+                    System.out.printf("Rey de Copas");
                     break;
 
                 default:
-                    System.out.println(numero + " de Copas");
+                    System.out.printf( numero + " de Copas");
                     break;
 
             }
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 
