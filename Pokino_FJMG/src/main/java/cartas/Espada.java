@@ -58,7 +58,7 @@ public class Espada extends CartaEsp {
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 

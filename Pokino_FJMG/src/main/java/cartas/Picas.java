@@ -58,7 +58,7 @@ public class Picas extends CartaPoker {
 
         } else {
 
-            System.out.println("XXXXXXXXXX");
+            System.out.printf("XXXXXXXXXX");
 
         }
 
