@@ -15,7 +15,7 @@ import cartas.*;
 public class Carton {
 
     //Atributos compartidos entre clases:
-    final int MAX = 5;
+    public final int MAX = 5;
     ArrayList<CartaEsp[]> lineaPokerEsp = new ArrayList<>();//Registra la línea de poker de cada cartón hecho (Cartas Españolas)
     ArrayList<CartaEsp[]> lineaFullEsp = new ArrayList<>();;//Registra la línea de full de cada cartón hecho (Cartas Españolas)
     ArrayList<CartaEsp> centrosEsp = new ArrayList<>();;//Registra la línea de poker de cada cartón hecho (Cartas Españolas)
@@ -868,10 +868,13 @@ public class Carton {
     public void MostrarCartonEng() {
 
         for (int x = 0; x < MAX; x++) {
+            
+            System.out.printf("|  ");
 
             for (int y = 0; y < MAX; y++) {
 
                 cartonEng[x][y].mostrarCarta();
+                System.out.printf("  |  ");
 
             }
 
@@ -888,5 +891,23 @@ public class Carton {
     public void setId(int id) {
         this.id = id;
     }
+
+    public CartaEsp[][] getCartonEsp() {
+        return cartonEsp;
+    }
+
+    public void setCartonEsp(CartaEsp[][] cartonEsp) {
+        this.cartonEsp = cartonEsp;
+    }
+
+    public CartaPoker[][] getCartonEng() {
+        return cartonEng;
+    }
+
+    public void setCartonEng(CartaPoker[][] cartonEng) {
+        this.cartonEng = cartonEng;
+    }
         
+    
+    
 }

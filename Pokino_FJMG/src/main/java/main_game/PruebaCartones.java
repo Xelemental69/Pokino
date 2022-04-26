@@ -21,7 +21,8 @@ public class PruebaCartones {
         // TODO code application logic here
         
         int choice;    
-        Scanner entry = new Scanner(System.in);        
+        Scanner entry = new Scanner(System.in);
+        boolean permitemeQueInsista = false;
         ArrayList <Carton> jugadores = new ArrayList<>();
         //BarajaEsp plantilla = new BarajaEsp();
         
@@ -57,6 +58,7 @@ public class PruebaCartones {
             
             for(int j = 0; j < 12; j++){
 
+                System.out.println("Cartón " + jugadores.get(j).getId() + ":");
                 jugadores.get(j).MostrarCartonEng();
 
             }
@@ -69,7 +71,9 @@ public class PruebaCartones {
         
         }catch(InputMismatchException ime){
             
-            System.out.println("ERROR. Saliendo del programa...");
+            System.out.println("ERROR. Introduce un nº");
+            permitemeQueInsista = true;
+            System.out.println("PERMÍTEME QUE INSISTA");
             
         }
         
