@@ -34,7 +34,7 @@ public class JuegoEsp {
 
             cartones.add(new Carton(i + 1));
 
-        }
+        }    
         
         for(int j = 0; j < 12; j++){
                 
@@ -44,7 +44,7 @@ public class JuegoEsp {
             }
         
         do{
-            
+                                    
             do{
                 
                 elegirFila = rng.nextInt(12);
@@ -79,6 +79,13 @@ public class JuegoEsp {
 
             }
             
+            for(int j = 0; j < 12; j++){
+                
+                System.out.println("Cartón " + cartones.get(j).getId() + ":");
+                cartones.get(j).MostrarCartonEsp();
+
+            }
+            
             if(!centro){
                 
                 centro = centroCheck(cartones);
@@ -107,9 +114,9 @@ public class JuegoEsp {
                 
                 poker = pokerCheck(cartones);
                 
-            }
+            }                       
             
-            victoria = winCheck(cartones);
+            victoria = winCheck(cartones);                        
             
         }while(!victoria);
 
