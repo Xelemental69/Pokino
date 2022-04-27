@@ -8,6 +8,7 @@ package main_game;
 import baraja_carton.*;
 import cartas.*;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -64,6 +65,9 @@ public class MainJuego {
         ArrayList<Carton> cartones = new ArrayList<>();
         BarajaEsp baraja = new BarajaEsp();
         Random rng = new Random();
+        Scanner entry = new Scanner(System.in);
+        int select = 0;
+        boolean permitemeQueInsista = false;
         CartaEsp auxiliar;
         int elegirFila;
         int elegirCarta;
@@ -89,6 +93,34 @@ public class MainJuego {
                 cartones.get(j).MostrarCartonEsp();
 
             }
+        
+        do{
+
+                try{//Pedimos el cartón a escoger
+                    
+                    System.out.println("¿Qué cartón desea ver? (rango: de 1 a 12)");
+                    select = entry.nextInt();
+                    
+                    System.out.println("Cartón nº" + select + ':');
+                    cartones.get(select - 1).MostrarCartonEsp();
+                    permitemeQueInsista = false;
+                                        
+                }catch(InputMismatchException ime){//Si escribe un caractér no
+                    //numérico, salta esta excepción
+                    
+                    System.out.println("ERROR: Tiene que introducir un nº.");
+                    permitemeQueInsista = true;
+                    entry.nextLine();
+                    
+                }catch(IndexOutOfBoundsException ioobe){//Si escribe un nº que
+                    //no sea entre 1 al 12, salta esta excepción
+                    
+                    System.out.println("ERROR: Nº fuera de rango.");
+                    permitemeQueInsista = true;
+                    entry.nextLine();
+                }
+
+            }while(permitemeQueInsista);
         
         do{//Iniciamos el bucle del juego hasta que a alguien le toque Pokino
                                   
@@ -130,12 +162,15 @@ public class MainJuego {
 
             }
             
-            for(int j = 0; j < 12; j++){//Mostramos los cartones:
-                
-                System.out.println("Cartón " + cartones.get(j).getId() + ":");
-                cartones.get(j).MostrarCartonEsp();
-
-            }
+            //Mostramos el cartón escogido:
+            cartones.get(select - 1).MostrarCartonEsp();
+            
+//            for(int j = 0; j < 12; j++){//Mostramos los cartones:
+//                
+//                System.out.println("Cartón " + cartones.get(j).getId() + ":");
+//                cartones.get(j).MostrarCartonEsp();
+//
+//            }
             
             //Comprobamos los premios (solo se comprobará si no lo ha ganado nadie,
             //guardándose el ganador de los mismos y mostrándolos en pantalla)
@@ -191,7 +226,13 @@ public class MainJuego {
                 System.out.println("POKINO!!!\nEl jugador con el cartón "
                         + ganador + " es el ganador del Pokino");
                 
-            }                                                
+            }                  
+            
+            try {//Testeando una forma de pausar el programa por 2 segundos...            
+            TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+            }
             
         }while(!victoria);
         
@@ -418,6 +459,9 @@ public class MainJuego {
         ArrayList<Carton> cartones = new ArrayList<>();
         BarajaPoker baraja = new BarajaPoker();
         Random rng = new Random();
+        Scanner entry = new Scanner(System.in);
+        int select = 0;
+        boolean permitemeQueInsista = false;
         CartaPoker auxiliar;
         int elegirFila;
         int elegirCarta;
@@ -444,6 +488,35 @@ public class MainJuego {
 
             }
         
+        do{
+
+                try{//Pedimos el cartón a escoger
+                    
+                    System.out.println("¿Qué cartón desea ver? (rango: de 1 a 12)");
+                    select = entry.nextInt();
+                    
+                    System.out.println("Cartón nº" + select + ':');
+                    cartones.get(select - 1).MostrarCartonEng();
+                    
+                    permitemeQueInsista = false;
+                                        
+                }catch(InputMismatchException ime){//Si escribe un caractér no
+                    //numérico, salta esta excepción
+                    
+                    System.out.println("ERROR: Tiene que introducir un nº.");
+                    permitemeQueInsista = true;
+                    entry.nextLine();
+                    
+                }catch(IndexOutOfBoundsException ioobe){//Si escribe un nº que
+                    //no sea entre 1 al 12, salta esta excepción
+                    
+                    System.out.println("ERROR: Nº fuera de rango.");
+                    permitemeQueInsista = true;
+                    entry.nextLine();
+                }
+
+            }while(permitemeQueInsista);
+        
         do{//Iniciamos el bucle del juego hasta que a alguien le toque Pokino
                                   
             //Sacamos la carta:
@@ -455,7 +528,7 @@ public class MainJuego {
             
             //Escogemos al azar una carta de la fila:
             elegirCarta = rng.nextInt(baraja.getBaraja().get(elegirFila).size());
-            
+                                    
             //La mostramos y la quitamos de la baraja:
             System.out.printf("Ha salido...");            
             auxiliar = baraja.getBaraja().get(elegirFila).get(elegirCarta);
@@ -484,13 +557,16 @@ public class MainJuego {
 
             }
             
-            for(int j = 0; j < 12; j++){//Mostramos los cartones:
-                
-                System.out.println("Cartón " + cartones.get(j).getId() + ":");
-                cartones.get(j).MostrarCartonEng();
-
-            }
+            //Mostramos el cartón escogido:
+            cartones.get(select - 1).MostrarCartonEng();
             
+//            for(int j = 0; j < 12; j++){//Mostramos los cartones:
+//                
+//                System.out.println("Cartón " + cartones.get(j).getId() + ":");
+//                cartones.get(j).MostrarCartonEng();
+//
+//            }
+                        
             //Comprobamos los premios (solo se comprobará si no lo ha ganado nadie,
             //guardándose el ganador de los mismos)
             
@@ -546,7 +622,13 @@ public class MainJuego {
                 System.out.println("POKINO!!!\nEl jugador con el cartón "
                         + ganador + " es el ganador del Pokino");
                 
-            }                                                
+            }                            
+            
+            try {//Aplicamos un delay de 3 segundos...            
+            TimeUnit.SECONDS.sleep(3);
+            } catch (InterruptedException ie) {
+            Thread.currentThread().interrupt();
+            }
             
         }while(!victoria);
         
